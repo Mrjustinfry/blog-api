@@ -1,10 +1,8 @@
-const express = require('express');
+
+const express = require("express");
 const router = express.Router();
 
-const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json();
-
-const { BlogPosts } = require('./models');
+const { BlogPosts } = require("./models");
 
 BlogPosts.create("Yesterday", "All my troubles seemed so far away", "Ringo");
 BlogPosts.create("All you need is love!", "Love is all you need", "Paul");
@@ -13,15 +11,14 @@ BlogPosts.create("Eleanor Rigby", "All the lonely people, Where do they all come
 
 
 //Get request
-router.get('/blog-posts', (req, res) => {
-    console.log('read');
+router.get('/', (req, res) => {
     res.json(BlogPosts.get());
-    res.send(BlogPosts.get());
 });
 
 
+
 //POST request
-router.post("/blog-posts", jsonParser, (req, res) => {
+router.post("/", (req, res) => {
     const requiredInfo = ["title", "content", "author"];
     for (let i = 0; i < requiredInfo.length; i++) {
         const info = requiredInfo[i];
@@ -38,7 +35,7 @@ router.post("/blog-posts", jsonParser, (req, res) => {
 
 
 //PUT request
-router.put("/blog-posts/:id", jsonParser, (req, res) => {
+router.put("/:id", (req, res) => {
     const requiredInfo = ["title", "content", "author", "id"];
     for (let i = 0; i < requiredInfo.length; i++) {
         const info = requiredInfo[i];
@@ -65,7 +62,7 @@ router.put("/blog-posts/:id", jsonParser, (req, res) => {
 });
 
 //DELETE request
-router.delete("/blog-posts/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     BlogPosts.delete(req.params.id);
     console.log(`Deleted post \`${req.params.id}\``);
     res.status(204).end();
