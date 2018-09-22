@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: cLa7KGLQilzrcefv+nKHYEPouZdOwxH3arMVR1xQGNJOWofzRjGmTzcB+y9ZDdkuG9IpcdVFoDZ/vJpn6NCzXfCRdEGeIQphbkcjnFrEgYBaPYJoRLWwcZyUaErNAe5gL/99bOYUEgtTC5E8npSX0PdteliKHI+bKuI8uoc1A36KLFuguGuX/85ZOLYnUWcoacfCtQlPlHvUgl9Z8dWG/BN4xwvtgwZORTQexKRJPiQXlEbwd5nb/UK2xVOXeBfqhK5LhPfIjQLaE+/7JPmh1KFa+cwCKvc70dGrJTuW5b1q8+rRbMMZC7t1m8Hwls8RLxJwSO/hf6dg7qEOgMFrqHWEnayb2J864mjYG9Pg8/EYZbnU/y+p+rmEN8jjjb/VJ53qBquQd2H4UL7qTorGsziBwty4CaTdcXrc58sEX4fBSg2Ydg4x6IisNaLFRGqZvaCfRpaqHFZhGHub60sa6VB8h3VcBuBhlCyxtFkvPyiBqgsDC/nfuy0VTlcjKJXgEW5onhXPY3jQCLp0QaUW8tqc19nR5GzHjw13uK7OHP+qdpCFeWgjmatzOX+U8iQNN5RJsSHJ3PNBolFGx220MHz9ZN4rIJqv3MrdVyvQV/ERMALUi01OOMBFn4N07xKky/smbHGAleWihqpr+MUjvEry9x96ZIyQH1zuB2kl5xg=
+  app: blog-api
+  on:
+    repo: Mrjustinfry/blog-api
