@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node_modules"
+    "\\test"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\.travis.yml",
   "PreviewInSolutionExplorer": false
 }

@@ -1,3 +1,2 @@
-THINKFUL BLOG API Challenge.
-
-# blog-api
+Blog app challenge solution
+==========================
