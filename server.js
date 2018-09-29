@@ -16,7 +16,8 @@ app.use(express.json());
 app.get('/posts', (req, res) => {
   BlogPost
     .find()
-    .then(posts => {
+      .then(posts => {
+          console.log(posts);
       res.json(posts.map(post => post.serialize()));
     })
     .catch(err => {
