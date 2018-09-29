@@ -155,7 +155,7 @@ function closeServer() {
 // runs. but we also export the runServer command so other code (for instance, test code) can start the server as needed.
 if (require.main === module) {
     console.log(DATABASE_URL);
-    runServer('mongodb://justinfry:thinkful101@ds111430.mlab.com:11430/seed-data').catch(err => console.error(err));
+    runServer(DATABASE_URL).catch(err => console.error(err));
 }
 
 module.exports = { runServer, app, closeServer };
