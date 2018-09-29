@@ -26,7 +26,6 @@ function seedBlogData() {
             content: faker.lorem.text()
         });
     }
-    // this will return a promise
     return BlogPost.insertMany(seedData);
 };
 
