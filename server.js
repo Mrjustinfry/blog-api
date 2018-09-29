@@ -117,7 +117,8 @@ let server;
 
 // this function connects to our database, then starts the server
 function runServer(databaseUrl, port = PORT) {
-  return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
+        console.log(databaseUrl, port);
     mongoose.connect(databaseUrl, err => {
       if (err) {
         return reject(err);
@@ -153,7 +154,8 @@ function closeServer() {
 // if server.js is called directly (aka, with `node server.js`), this block
 // runs. but we also export the runServer command so other code (for instance, test code) can start the server as needed.
 if (require.main === module) {
-  runServer(DATABASE_URL).catch(err => console.error(err));
+    console.log(DATABASE_URL);
+    runServer('mongodb://justinfry:thinkful101@ds111430.mlab.com:11430/seed-data').catch(err => console.error(err));
 }
 
 module.exports = { runServer, app, closeServer };
